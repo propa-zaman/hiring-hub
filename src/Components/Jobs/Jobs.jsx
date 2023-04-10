@@ -6,12 +6,15 @@ const Jobs = ({job}) => {
     return (
         <div className='jobs-box'>
             <img src={company_logo} alt="" />
-            <h6>{job_title}</h6>
+            <h5 className='fs-5'>{job_title}</h5>
             <p>{company_name}</p>
-            <p>{remote_or_onsite}</p>
-            <p>{fulltime_or_parttime}</p>
+            <div className='d-flex mx-auto align-items-center justify-content-center'>
+            <p className='btn btn-outline-info me-2'>{remote_or_onsite}</p>
+            <p className='btn btn-outline-info'>{fulltime_or_parttime}</p>
+            </div>
             <p>Location:{location}</p>
             <p>Salary:{salary}</p>
+            <button className='btn btn-info'>View Details</button>
 
         </div>
     );

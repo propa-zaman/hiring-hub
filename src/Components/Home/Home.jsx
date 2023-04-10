@@ -45,13 +45,14 @@ const Home = () => {
             <div className='container text-center mt-5 mx-auto'>
             <h3 className='fw-bold'>Featured Jobs</h3>
                 <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
-                <div>
+                <div className='row row-cols-md-2 g-2 mt-5'>
                     {
                         jobs.map(job => <Jobs
                         key={job.id}
                         job={job}></Jobs>)
                     }
                 </div>
+                <button className='btn btn-info mt-5'>See All Jobs</button>
 
 
             </div>
