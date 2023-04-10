@@ -1,9 +1,18 @@
 import React from 'react';
+import './Jobs.css'
 
-const Jobs = () => {
+const Jobs = ({job}) => {
+    const {company_logo, job_title, company_name, remote_or_onsite, fulltime_or_parttime, location, salary} = job;
     return (
-        <div>
-            <h2>This is Jobs</h2>
+        <div className='jobs-box'>
+            <img src={company_logo} alt="" />
+            <h6>{job_title}</h6>
+            <p>{company_name}</p>
+            <p>{remote_or_onsite}</p>
+            <p>{fulltime_or_parttime}</p>
+            <p>Location:{location}</p>
+            <p>Salary:{salary}</p>
+
         </div>
     );
 };
