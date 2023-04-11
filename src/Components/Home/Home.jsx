@@ -4,13 +4,13 @@ import Catagories from '../Catagories/Catagories';
 import Jobs from '../Jobs/Jobs';
 
 const Home = () => { 
-    const catagories = useLoaderData();
-    const [jobs, setJobs] = useState([]);
+    const jobs = useLoaderData();
+    const [catagories, setCatagories] = useState([]);
 
     useEffect(()=>{
-        fetch('jobs.json')
+        fetch('catagory.json')
         .then(res => res.json())
-        .then(data => setJobs(data))
+        .then(data => setCatagories(data))
     },[])
     return (
         <div>
