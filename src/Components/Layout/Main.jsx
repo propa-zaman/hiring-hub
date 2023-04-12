@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-import Home from '../Home/Home';
+
+export const JobDataContext = createContext([]);
 
 const Main = () => {
     return (

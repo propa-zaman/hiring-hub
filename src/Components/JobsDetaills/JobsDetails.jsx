@@ -30,7 +30,7 @@ const JobsDetails = () => {
                     <p><span className='fw-bold'>Job responsibility: </span>{job.job_responsibility}</p>
                     <h6 className='fw-bold'>Educational Requirements:</h6>
                     <p>{job.educational_requirements}</p>
-                    <h6 className='fw bold'>Experience:</h6>
+                    <h6 className='fw-bold'>Experience:</h6>
                     <p>{job.experiences}</p>
                 </div>
 
