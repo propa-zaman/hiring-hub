@@ -10,7 +10,7 @@ const JobsDetails = () => {
 
     const [job, setJob] = useState([]);
     useEffect(() => {
-        fetch('/public/jobs.json')
+        fetch('/jobs.json')
             .then(res => res.json())
             .then(data => {
                 const jobData = data.find(job => job.id === parseInt(params.jobId));
