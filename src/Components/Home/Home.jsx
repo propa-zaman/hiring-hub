@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Catagories from '../Catagories/Catagories';
 import Jobs from '../Jobs/Jobs';
+import BannerImage from '../../assets/hardy copy.png'
 
 const Home = () => {
     const jobs = useLoaderData();
@@ -24,7 +25,7 @@ const Home = () => {
                 </div>
 
                 <div>
-                    <img src="../../.././public/images/hardy copy.png" alt="" />
+                    <img src={BannerImage} alt="" />
                 </div>
             </div>
             {/* Job category section */}

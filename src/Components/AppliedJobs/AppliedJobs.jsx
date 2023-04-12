@@ -17,7 +17,7 @@ const AppliedJobs = () => {
     }
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-        fetch('jobs.json')
+        fetch('/jobs.json')
             .then(res => res.json())
             .then(data => setJobs(data))
 
