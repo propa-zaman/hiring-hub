@@ -10,10 +10,18 @@ export const JobDataContext = createContext([]);
 const AppliedJobs = () => {
     const [appliedJob, setAppliedJob] = useState([]);
     const [isFilter, setFilter] = useState([]);
+    const [jobs, setJobs] = useState([]);
     const navigation = useNavigation();
     if (navigation.state === "loading") {
         return <Loading></Loading>
     }
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        fetch('jobs.json')
+            .then(res => res.json())
+            .then(data => setJobs(data))
+
+    }, [])
 
     // get all job data using context api
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -31,6 +39,8 @@ const AppliedJobs = () => {
         setAppliedJob(jobCart);
         setFilter(jobCart);
     }, []);
+
+    <JobDataContext.Provider value={jobs}></JobDataContext.Provider>
 
     // check the applied jobs data is or not
 
