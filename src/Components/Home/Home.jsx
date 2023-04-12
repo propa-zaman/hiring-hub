@@ -3,15 +3,16 @@ import { useLoaderData } from 'react-router-dom';
 import Catagories from '../Catagories/Catagories';
 import Jobs from '../Jobs/Jobs';
 
-const Home = () => { 
+const Home = () => {
     const jobs = useLoaderData();
     const [catagories, setCatagories] = useState([]);
+    const [showAll, setShowAll] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('catagory.json')
-        .then(res => res.json())
-        .then(data => setCatagories(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setCatagories(data))
+    }, [])
     return (
         <div>
             {/* Header section*/}
@@ -32,27 +33,36 @@ const Home = () => {
                 <h3 className='fw-bold'>Job Category List</h3>
                 <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='d-md-flex mt-5'>
-                {
-                    catagories.map(catagory => <Catagories
-                    key={catagory.id}
-                    catagory={catagory}></Catagories>)
-                }
+                    {
+                        catagories.map(catagory => <Catagories
+                            key={catagory.id}
+                            catagory={catagory}></Catagories>)
+                    }
                 </div>
-               
+
             </div>
             {/* featured job section */}
 
             <div className='container text-center mt-5 mx-auto'>
-            <h3 className='fw-bold'>Featured Jobs</h3>
+                <h3 className='fw-bold'>Featured Jobs</h3>
                 <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='row row-cols-md-2 g-2 mt-5'>
                     {
-                        jobs.map(job => <Jobs
-                        key={job.id}
-                        job={job}></Jobs>)
+                        jobs.slice(0, showAll ? 8 : 4).map(job => <Jobs
+                            key={job.id}
+                            job={job}></Jobs>)
                     }
                 </div>
-                <button className='btn btn-info mt-5'>See All Jobs</button>
+
+                {!showAll && (
+                    <div className='text-center py-5'>
+                        <button className='btn-info' onClick={() => setShowAll(!showAll)} >
+                            See All Jobs
+                        </button>
+
+                    </div>
+                )}
+
 
 
             </div>

@@ -11,8 +11,8 @@ const JobsDetails = () => {
         fetch('/public/jobs.json')
             .then(res => res.json())
             .then(data => {
-                const jobData = data.find(job => job.id === params.jobId);
-                console.log(jobData);
+                const jobData = data.find(job => job.id == params.jobId);
+                setJob(jobData);
             })
         }, [])
     return (
@@ -20,9 +20,9 @@ const JobsDetails = () => {
             <h3 className='fw-bold'>Job Details</h3>
             <p className='mt-5'><span className='fw-bold'>Job description: </span>{job.job_description}</p>
             <p><span className='fw-bold'>Job responsibility: </span>{job.job_responsibility}</p>
-            <h6>Educational Requirements:</h6>
+            <h6 className='fw-bold'>Educational Requirements:</h6>
             <p>{job.educational_requirements}</p>
-            <h6>Experience:</h6>
+            <h6 className='fw bold'>Experience:</h6>
             <p>{job.experiences}</p>
         </div>
     );
