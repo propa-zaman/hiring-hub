@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './Header.css'
 
 
 const Header = () => {
@@ -18,10 +19,10 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link className='fw-bold text-black' href="/">Home</Nav.Link>
-                        <Nav.Link className='fw-bold text-black' href="/statistics">Statistics</Nav.Link>
-                        <Nav.Link className='fw-bold text-black' href="/appliedjobs">Applied Jobs</Nav.Link>
-                        <Nav.Link className='fw-bold text-black' href="/blog">Blog</Nav.Link>
+                        <Nav.Link className='fw-bold text-black hover' href="/">Home</Nav.Link>
+                        <Nav.Link className='fw-bold text-black hover h' href="/statistics">Statistics</Nav.Link>
+                        <Nav.Link className='fw-bold text-black hover' href="/appliedjobs">Applied Jobs</Nav.Link>
+                        <Nav.Link className='fw-bold text-black hover' href="/blog">Blog</Nav.Link>
 
 
 

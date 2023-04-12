@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import {addToDb} from '../../utils/fakedb'
 import './JobsDetails.css'
 
 const JobsDetails = () => {
@@ -12,10 +13,14 @@ const JobsDetails = () => {
         fetch('/public/jobs.json')
             .then(res => res.json())
             .then(data => {
-                const jobData = data.find(job => job.id == params.jobId);
+                const jobData = data.find(job => job.id === parseInt(params.jobId));
                 setJob(jobData);
             })
     }, [])
+
+    const handleApply = (id) => {
+        addToDb(id);
+      };
     return (
         <div className='container mt-5 mx-auto'>
             <h3 className='fw-bold text-center'>Job Details</h3>
@@ -37,7 +42,7 @@ const JobsDetails = () => {
                     <p><span className='fw-semibold'>Phone:</span>{job.phone}</p>
                     <p><span className='fw-semibold'>Email:</span>{job.email}</p>
                     <p><span className='fw-semibold'>Address:</span>{job.location}</p>
-                    <button className='btn btn-info text-white fw-semibold'>Apply Now</button>
+                    <button className='btn btn-info text-white fw-semibold' onClick={() =>handleApply(job.id)}>Apply Now</button>
                 </div>
             </div>
 
