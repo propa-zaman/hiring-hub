@@ -20,7 +20,7 @@ const Home = () => {
                 <div>
                     <h2 className='fs-1 text mt-5 fw-bolder'>One Step <br /> Closer To Your <br /> <span className='text-info'>Dream Job</span></h2>
                     <p>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
-                    <button className='btn btn-info'>Get Started</button>
+                    <button className='btn btn-info text-white fw-semibold'>Get Started</button>
                 </div>
 
                 <div>
@@ -56,7 +56,7 @@ const Home = () => {
 
                 {!showAll && (
                     <div className='text-center py-5'>
-                        <button className='btn-info' onClick={() => setShowAll(!showAll)} >
+                        <button className='btn btn-info text-white fw-semibold' onClick={() => setShowAll(!showAll)} >
                             See All Jobs
                         </button>
 

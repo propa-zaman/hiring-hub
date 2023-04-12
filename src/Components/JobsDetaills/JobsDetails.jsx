@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import './JobsDetails.css'
 
 const JobsDetails = () => {
 
@@ -14,16 +15,32 @@ const JobsDetails = () => {
                 const jobData = data.find(job => job.id == params.jobId);
                 setJob(jobData);
             })
-        }, [])
+    }, [])
     return (
-        <div className='container text-center mt-5 mx-auto'>
-            <h3 className='fw-bold'>Job Details</h3>
-            <p className='mt-5'><span className='fw-bold'>Job description: </span>{job.job_description}</p>
-            <p><span className='fw-bold'>Job responsibility: </span>{job.job_responsibility}</p>
-            <h6 className='fw-bold'>Educational Requirements:</h6>
-            <p>{job.educational_requirements}</p>
-            <h6 className='fw bold'>Experience:</h6>
-            <p>{job.experiences}</p>
+        <div className='container mt-5 mx-auto'>
+            <h3 className='fw-bold text-center'>Job Details</h3>
+            <div className='d-md-flex mt-5 justify-content-evenly'>
+                <div className='text-start me-5'>
+                    <p className='mt-5'><span className='fw-bold'>Job description: </span>{job.job_description}</p>
+                    <p><span className='fw-bold'>Job responsibility: </span>{job.job_responsibility}</p>
+                    <h6 className='fw-bold'>Educational Requirements:</h6>
+                    <p>{job.educational_requirements}</p>
+                    <h6 className='fw bold'>Experience:</h6>
+                    <p>{job.experiences}</p>
+                </div>
+
+                <div className='job-details p-5 ms-5'>
+                    <h6 className='fw-bold'>Job Details</h6>
+                    <p><span className='fw-semibold'>Salary:</span>{job.salary}</p>
+                    <p><span className='fw-semibold'>Job title:</span>{job.job_title}</p>
+                    <h6 className='fw-bold'>Contact information</h6>
+                    <p><span className='fw-semibold'>Phone:</span>{job.phone}</p>
+                    <p><span className='fw-semibold'>Email:</span>{job.email}</p>
+                    <p><span className='fw-semibold'>Address:</span>{job.location}</p>
+                    <button className='btn btn-info text-white fw-semibold'>Apply Now</button>
+                </div>
+            </div>
+
         </div>
     );
 };

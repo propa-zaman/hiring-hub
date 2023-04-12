@@ -8,9 +8,9 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Container fluid>
-                <Navbar.Brand href="/"><h2 className='text-info'>HiringHub</h2></Navbar.Brand>
+        <Navbar expand="lg">
+            <Container>
+                <Navbar.Brand href="/"><h2 className='text-info fw-bolder'>HiringHub</h2></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -18,15 +18,15 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/statistics">Statistics</Nav.Link>
-                        <Nav.Link href="/appliedjobs">Applied Jobs</Nav.Link>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link className='fw-bold text-black' href="/">Home</Nav.Link>
+                        <Nav.Link className='fw-bold text-black' href="/statistics">Statistics</Nav.Link>
+                        <Nav.Link className='fw-bold text-black' href="/appliedjobs">Applied Jobs</Nav.Link>
+                        <Nav.Link className='fw-bold text-black' href="/blog">Blog</Nav.Link>
 
 
 
                     </Nav>
-                    <Button variant="info">Start Applying</Button>
+                    <Button variant="info" className='btn btn-info text-white fw-semibold'>Start Applying</Button>
 
                 </Navbar.Collapse>
             </Container>
